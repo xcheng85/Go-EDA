@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package playerspb;
+
+import "playerspb/messages.proto";
+
+service PlayersService {
+  rpc GetCustomer(GetCustomerRequest) returns (GetCustomerResponse) {};
+}
+
+message GetPlayerRequest {
+  string id = 1;
+}
+message GetPlayerResponse {
+  Player player = 1;
+}

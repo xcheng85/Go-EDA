@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+package playerspb;
+
+message Player {
+  string id = 1;
+  string name = 2;
+}

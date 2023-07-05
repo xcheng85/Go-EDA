@@ -1,0 +1,29 @@
+version: v1
+managed:
+  enabled: true
+  go_package_prefix:
+    default: github.com/xcheng85/Go-EDA/players/playerspb
+    except:
+      - buf.build/googleapis/googleapis
+plugins:
+  - plugin: go
+    out: .
+    opt:
+      - paths=source_relative
+  - plugin: go-grpc
+    out: .
+    opt:
+      - paths=source_relative
+  - plugin: grpc-gateway
+    out: .
+    opt:
+      - paths=source_relative
+      - grpc_api_configuration=internal/rest/api.annotations.yaml
+      - standalone=true
+  - plugin: openapiv2
+    out: internal/rest
+    opt:
+      - grpc_api_configuration=internal/rest/api.annotations.yaml
+      - openapi_configuration=internal/rest/api.openapi.yaml
+      - allow_merge=true
+      - merge_file_name=api
