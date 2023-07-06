@@ -2,5 +2,5 @@ type: google.api.Service
 config_version: 3
 http:
   rules:
-    - selector: customerspb.CustomersService.GetCustomer
-      get: /api/customers/{id}
+    - selector: playerspb.PlayersService.GetPlayer
+      get: /api/players/{id}

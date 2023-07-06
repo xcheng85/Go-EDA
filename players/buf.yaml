@@ -1,5 +1,5 @@
 version: v1
-name: github.com/xcheng85/Go-EDA/players
+# name: github.com/xcheng85/Go-EDA/players
 deps:
   - buf.build/googleapis/googleapis
   - buf.build/grpc-ecosystem/grpc-gateway

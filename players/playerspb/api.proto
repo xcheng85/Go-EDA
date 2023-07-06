@@ -5,7 +5,7 @@ package playerspb;
 import "playerspb/messages.proto";
 
 service PlayersService {
-  rpc GetCustomer(GetCustomerRequest) returns (GetCustomerResponse) {};
+  rpc GetPlayer(GetPlayerRequest) returns (GetPlayerResponse) {};
 }
 
 message GetPlayerRequest {

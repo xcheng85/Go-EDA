@@ -1,0 +1,31 @@
+openapiOptions:
+  file:
+    # the file name must be the same as one passed to protoc when generating generating .swagger.json
+    - file: "playerspb/messages.proto"
+      option:
+        info:
+          title: Players
+          version: "1.0.0"
+        schemes:
+          - HTTP
+          - HTTPS
+          - WSS
+        consumes:
+          - application/json
+        produces:
+          - application/json
+  service:
+    - service: playerspb.PlayersService
+      option:
+        description: "PlayersService description "
+        external_docs:
+          url: ""
+          description: "Find out more about PlayersService"
+  method:
+    - method: playerspb.PlayersService.GetPlayer
+      option:
+        operationId: getPlayer
+        description: "Description GetPlayer"
+        summary: "Summary: Get a player by id"
+        tags:
+          - Player

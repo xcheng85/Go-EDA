@@ -20,6 +20,7 @@ plugins:
       - paths=source_relative
       - grpc_api_configuration=internal/rest/api.annotations.yaml
       - standalone=true
+      - logtostderr=true 
   - plugin: openapiv2
     out: internal/rest
     opt:
