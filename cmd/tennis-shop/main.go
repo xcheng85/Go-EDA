@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"github.com/xcheng85/Go-EDA/internal/worker"
 )
 
 func main() {
@@ -13,5 +14,8 @@ func main() {
 }
 
 func run() (err error) {
+	myapp := app{}
+	myapp.workerSyncer = worker.NewSyncer()
+
 	return nil
 }
