@@ -52,3 +52,14 @@ rules: canceled the first time a function passed to Go returns a non-nil error o
 signal.NotifyContext
 go 1.16
 https://millhouse.dev/posts/graceful-shutdowns-in-golang-with-signal-notify-context
+
+
+## global config env
+1. create env var from .env file
+"github.com/stackus/dotenv"
+2. create config structure from environment var
+"github.com/kelseyhightower/envconfig"
+Golang library for managing configuration data from environment variables
+
+
+## 
