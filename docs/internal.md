@@ -1,5 +1,12 @@
 # internal module
 
+## mux for rest reverse-proxy
+1. "github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
+2. "github.com/go-chi/chi/v5" (for mount sub-router)
+benifits of using go-chi. 
+
+Each subdomain module's 
+
 
 ## context 
 see ch4 of book "cloud native go building reliable"

@@ -8,7 +8,7 @@ repositories: sql or no sql, CRUD, ORM, layer above db
 
 services: business logic related to player
 
-handlers (controllers): grpc
+handlers (controllers): grpc and rest
 
 DTO: request params, qs, body, and response, layer between domain and handler
 
@@ -36,3 +36,13 @@ Attach the Player service to the server passed in
 
 ## service (business logic)
 
+
+## swagger 
+1. embed (go standard lib)
+
+index.html and api.swagger.json
+url: "api.swagger.json",
+
+The FS type enables embedding a tree of files, such as a directory of static web server content
+
+2. register 

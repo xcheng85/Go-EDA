@@ -9,6 +9,7 @@ require (
 )
 
 require (
+	github.com/go-chi/chi/v5 v5.0.8 // indirect
 	github.com/golang/glog v1.1.0 // indirect
 	github.com/golang/protobuf v1.5.3 // indirect
 	github.com/kr/text v0.2.0 // indirect
