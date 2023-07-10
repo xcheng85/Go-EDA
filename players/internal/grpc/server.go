@@ -34,5 +34,14 @@ func (s server) GetPlayer(ctx context.Context, request *playerspb.GetPlayerReque
 		return nil, err
 	}
 	// convert from domain/entity to grpc response
-	return dto.CreateGetPlayerResponse(player), nil
+	return &playerspb.GetPlayerResponse{
+		Player: &playerspb.Player{
+			Id:   player.ID,
+			Name: player.Name,
+		},
+	}, nil
+
+
+
+	// return dto.CreateGetPlayerResponse(player), nil
 }

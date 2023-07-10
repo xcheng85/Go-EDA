@@ -15,7 +15,6 @@ import (
 
 	"github.com/grpc-ecosystem/grpc-gateway/v2/runtime"
 	"github.com/grpc-ecosystem/grpc-gateway/v2/utilities"
-	extPlayerspb "github.com/xcheng85/Go-EDA/players/playerspb/playerspb"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/grpclog"
@@ -32,8 +31,8 @@ var _ = runtime.String
 var _ = utilities.NewDoubleArray
 var _ = metadata.Join
 
-func request_PlayersService_GetPlayer_0(ctx context.Context, marshaler runtime.Marshaler, client extPlayerspb.PlayersServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq extPlayerspb.GetPlayerRequest
+func request_PlayersService_GetPlayer_0(ctx context.Context, marshaler runtime.Marshaler, client PlayersServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetPlayerRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -58,8 +57,8 @@ func request_PlayersService_GetPlayer_0(ctx context.Context, marshaler runtime.M
 
 }
 
-func local_request_PlayersService_GetPlayer_0(ctx context.Context, marshaler runtime.Marshaler, server extPlayerspb.PlayersServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
-	var protoReq extPlayerspb.GetPlayerRequest
+func local_request_PlayersService_GetPlayer_0(ctx context.Context, marshaler runtime.Marshaler, server PlayersServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+	var protoReq GetPlayerRequest
 	var metadata runtime.ServerMetadata
 
 	var (
@@ -88,7 +87,7 @@ func local_request_PlayersService_GetPlayer_0(ctx context.Context, marshaler run
 // UnaryRPC     :call PlayersServiceServer directly.
 // StreamingRPC :currently unsupported pending https://github.com/grpc/grpc-go/issues/906.
 // Note that using this registration option will cause many gRPC library features to stop working. Consider using RegisterPlayersServiceHandlerFromEndpoint instead.
-func RegisterPlayersServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server extPlayerspb.PlayersServiceServer) error {
+func RegisterPlayersServiceHandlerServer(ctx context.Context, mux *runtime.ServeMux, server PlayersServiceServer) error {
 
 	mux.Handle("GET", pattern_PlayersService_GetPlayer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
@@ -146,15 +145,15 @@ func RegisterPlayersServiceHandlerFromEndpoint(ctx context.Context, mux *runtime
 // RegisterPlayersServiceHandler registers the http handlers for service PlayersService to "mux".
 // The handlers forward requests to the grpc endpoint over "conn".
 func RegisterPlayersServiceHandler(ctx context.Context, mux *runtime.ServeMux, conn *grpc.ClientConn) error {
-	return RegisterPlayersServiceHandlerClient(ctx, mux, extPlayerspb.NewPlayersServiceClient(conn))
+	return RegisterPlayersServiceHandlerClient(ctx, mux, NewPlayersServiceClient(conn))
 }
 
 // RegisterPlayersServiceHandlerClient registers the http handlers for service PlayersService
-// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "extPlayerspb.PlayersServiceClient".
-// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "extPlayerspb.PlayersServiceClient"
+// to "mux". The handlers forward requests to the grpc endpoint over the given implementation of "PlayersServiceClient".
+// Note: the gRPC framework executes interceptors within the gRPC handler. If the passed in "PlayersServiceClient"
 // doesn't go through the normal gRPC flow (creating a gRPC client etc.) then it will be up to the passed in
-// "extPlayerspb.PlayersServiceClient" to call the correct interceptors.
-func RegisterPlayersServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client extPlayerspb.PlayersServiceClient) error {
+// "PlayersServiceClient" to call the correct interceptors.
+func RegisterPlayersServiceHandlerClient(ctx context.Context, mux *runtime.ServeMux, client PlayersServiceClient) error {
 
 	mux.Handle("GET", pattern_PlayersService_GetPlayer_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())

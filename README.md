@@ -140,6 +140,4 @@ mkdir -p players
 # buf remote plugin:
 # 1. openapiv2
 
-
-
 ```

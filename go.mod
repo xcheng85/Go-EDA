@@ -8,6 +8,8 @@ require (
 	google.golang.org/protobuf v1.31.0
 )
 
+require github.com/kisielk/godepgraph v0.0.0-20221115040737-2d0831789458 // indirect
+
 require (
 	github.com/go-chi/chi/v5 v5.0.8 // indirect
 	github.com/golang/glog v1.1.0 // indirect

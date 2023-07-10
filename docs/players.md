@@ -46,3 +46,9 @@ url: "api.swagger.json",
 The FS type enables embedding a tree of files, such as a directory of static web server content
 
 2. register 
+
+
+## Debug dependency graph
+```shell
+godepgraph ./cmd/tennis-shop/ | dot -Tpng -o godepgraph.png
+```

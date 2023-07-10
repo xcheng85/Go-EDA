@@ -5,10 +5,11 @@ import (
 	"os"
 
 	"github.com/go-chi/chi/v5"
+	"github.com/xcheng85/Go-EDA/players"
 	"github.com/xcheng85/Go-EDA/internal/config"
 	"github.com/xcheng85/Go-EDA/internal/monolith"
 	"github.com/xcheng85/Go-EDA/internal/worker"
-	"github.com/xcheng85/Go-EDA/players"
+	
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )
