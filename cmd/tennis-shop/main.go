@@ -2,14 +2,16 @@ package main
 
 import (
 	"fmt"
+	"net/http"
 	"os"
 
 	"github.com/go-chi/chi/v5"
-	"github.com/xcheng85/Go-EDA/players"
 	"github.com/xcheng85/Go-EDA/internal/config"
 	"github.com/xcheng85/Go-EDA/internal/monolith"
+	"github.com/xcheng85/Go-EDA/internal/swagger"
 	"github.com/xcheng85/Go-EDA/internal/worker"
-	
+	"github.com/xcheng85/Go-EDA/players"
+
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 )
@@ -45,6 +47,9 @@ func run() (err error) {
 	if err = myapp.startupModules(); err != nil {
 		return err
 	}
+	// Mount swagger
+	mux.Mount("/", http.FileServer(http.FS(web.WebUI)))
+
 	fmt.Println("started mallbots application")
 	defer fmt.Println("stopped mallbots application")
 
