@@ -24,6 +24,7 @@ func main() {
 }
 
 func run() (err error) {
+	// set up driven adapters
 	// create deps
 	config, err := config.NewAppConfig()
 	if err != nil {
@@ -35,6 +36,7 @@ func run() (err error) {
 	modules := []monolith.Module{
 		&players.Module{},
 	}
+	// setup application
 	// build the app with deps
 	myapp := app{
 		config:       config,
@@ -43,6 +45,7 @@ func run() (err error) {
 		rpc:          rpc,
 		workerSyncer: workerSyncer,
 	}
+	// set up Driver adapters
 	// bind rest and grpc routes
 	if err = myapp.startupModules(); err != nil {
 		return err

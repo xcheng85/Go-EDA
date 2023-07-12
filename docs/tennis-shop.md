@@ -1,5 +1,17 @@
 # 
 
+## Design
+
+app: composition root
+
+dep injection happens
+
+dep graph construction
+
+driven adpaters: 
+application
+driver adapters
+
 
 ## Run
 cd cmd/tennis-shop

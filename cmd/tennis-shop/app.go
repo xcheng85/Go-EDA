@@ -13,7 +13,7 @@ import (
 	"time"
 	"net/http"
 )
-
+// composition root
 // application in the hexongal arch
 // app must implement monolith interface, which is required in each sub module
 type app struct {
