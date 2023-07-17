@@ -53,8 +53,8 @@ func run() (err error) {
 	// Mount swagger
 	mux.Mount("/", http.FileServer(http.FS(web.WebUI)))
 
-	fmt.Println("started mallbots application")
-	defer fmt.Println("stopped mallbots application")
+	fmt.Println("started tennis-shop application")
+	defer fmt.Println("stopped tennis-shop application")
 
 	// blocking main thread
 	myapp.workerSyncer.Add(

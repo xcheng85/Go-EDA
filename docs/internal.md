@@ -53,6 +53,12 @@ signal.NotifyContext
 go 1.16
 https://millhouse.dev/posts/graceful-shutdowns-in-golang-with-signal-notify-context
 
+^Crpc server to be shutdown
+web server to be shutdown
+web server shutdown
+rpc server shutdown
+stopped tennis-shop application
+
 
 ## global config env
 1. create env var from .env file
